@@ -68,7 +68,7 @@ export async function POST(req: Request) {
     console.log('Received output from Replicate:', response);
 
     // Return the result
-    return NextResponse.json({ enhancedImage: response });
+    return NextResponse.json({ output: response });
 
   } catch (error) {
     console.error('Error in POST /api/enhance:', error);
