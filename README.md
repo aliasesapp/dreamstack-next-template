@@ -1,22 +1,24 @@
-# next-template
+# dreamstack-next-template
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+The DreamStack Next.js template for building apps with Shadcn, Radix UI and Tailwind CSS.
 
 ## Usage
 
 ```bash
-npx create-next-app -e https://github.com/shadcn/next-template
+npx create-next-app -e https://github.com/aliasesapp/dreamstack-next-template
 ```
 
 ## Features
 
-- Next.js 13 App Directory
+- Next.js App Router with API Routes
+- Shadcn UI
 - Radix UI Primitives
 - Tailwind CSS
 - Icons from [Lucide](https://lucide.dev)
 - Dark mode with `next-themes`
 - Tailwind CSS class sorting, merging and linting.
+- API for Replicate.com
 
 ## License
 
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+Copyright 2024 [Aliases, Inc.](https://aliases.co).

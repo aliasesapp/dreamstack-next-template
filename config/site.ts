@@ -1,18 +1,18 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "DreamStack App",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Build whatever you can dream of with DreamStack from Aliases.co",
   mainNav: [
     {
-      title: "Home",
-      href: "/",
+      title: "from Aliases",
+      href: "https://aliases.co",
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    aliases: "https://aliases.co",
+    linkedin: "https://www.linkedin.com/company/aliases-inc/",
+    twitter: "https://x.com/aliasesinc",
   },
 }

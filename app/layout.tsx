@@ -1,4 +1,5 @@
 import "@/styles/globals.css"
+
 import { Metadata } from "next"
 
 import { siteConfig } from "@/config/site"
@@ -7,6 +8,9 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+
+const iconUrl =
+  "https://raw.githubusercontent.com/aliasesapp/dreamstack-images/main/images/favicon"
 
 export const metadata: Metadata = {
   title: {
@@ -19,9 +23,12 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: `${iconUrl}/favicon-16x16.png`, sizes: "16x16" },
+      { url: `${iconUrl}/favicon-32x32.png`, sizes: "32x32" },
+    ],
+    shortcut: `${iconUrl}/favicon-16x16.png`,
+    apple: `${iconUrl}/apple-touch-icon.png`,
   },
 }
 
