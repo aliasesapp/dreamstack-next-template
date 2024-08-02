@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       prompt = "img of person, detailed face, morning sunrise on the beach", 
       light_source = "Left Light",
       token = "",
-      model = "tencentarc/photomaker:ddfc2b08d209f9fa8c1eca692712918bd449f695dabb4a958da31802a9570fe4"
+      task = "text-to-image", // text-to-image, relight-image, image-to-image
     } = requestData;
 
     const replicate = new Replicate({
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
 
     console.log('Extracted prompt:', prompt);
     console.log('Extracted light_source:', light_source);
-    console.log('Extracted model:', model);
+    console.log('Extracted task:', task);
     console.log('Image data length:', image ? image.length : 'No image data');
 
     // Check if the image is provided
@@ -40,16 +40,22 @@ export async function POST(req: Request) {
     let response;
 
     // Run the appropriate model based on the input
-    if (model === "zsxkib/ic-light:d41bcb10d8c159868f4cfbd7c6a2ca01484f7d39e4613419d5952c61562f1ba7") {
-      response = await replicate.run(model, {
+    if (task === "text-to-image") {
+    response = await replicate.run("black-forest-labs/flux-dev", {
+      input: {
+        prompt,
+      }
+    });
+    } else if (task === "relight-image") {
+      response = await replicate.run("zsxkib/ic-light:d41bcb10d8c159868f4cfbd7c6a2ca01484f7d39e4613419d5952c61562f1ba7", {
         input: {
           prompt,
           light_source,
           subject_image: image,
         }
       });
-    } else if (model === "tencentarc/photomaker:ddfc2b08d209f9fa8c1eca692712918bd449f695dabb4a958da31802a9570fe4") {
-      response = await replicate.run(model, {
+    } else if (task === "image-to-image") {
+      response = await replicate.run("tencentarc/photomaker:ddfc2b08d209f9fa8c1eca692712918bd449f695dabb4a958da31802a9570fe4", {
         input: {
           prompt: `img of a person, ${prompt}`,
           num_steps: 50,
@@ -71,7 +77,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ output: response });
 
   } catch (error) {
-    console.error('Error in POST /api/enhance:', error);
+    console.error('Error in POST /api/replicate:', error);
     if (error instanceof Error) {
       console.error('Error message:', error.message);
       console.error('Error stack:', error.stack);
