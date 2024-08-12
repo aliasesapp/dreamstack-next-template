@@ -8,21 +8,16 @@ export default function IndexPage() {
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          It&apos;s ok to dream again. <br className="hidden sm:inline" />
-          Unleash Your Inner Creator.
+          &ldquo;What if&rdquo; is the new programming language
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
-          Build whatever you can dream of with DreamStack from Aliases, Inc.
+          If you can type it, you can build it. with Dream by Aliases, Inc.
         </p>
       </div>
       <div className="flex gap-4">
         <Button asChild variant="default">
-          <Link
-            href={siteConfig.links.aliases}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Visit Aliases
+          <Link href={siteConfig.links.dream} target="_blank" rel="noreferrer">
+            Visit dream.aliases.co
           </Link>
         </Button>
       </div>

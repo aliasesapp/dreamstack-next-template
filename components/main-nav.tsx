@@ -12,16 +12,17 @@ interface MainNavProps {
 
 export function MainNav({ items }: MainNavProps) {
   return (
-    <div className="flex gap-3 md:gap-4">
+    <div className="flex items-end gap-1 md:gap-2">
       <Link
-        href="/"
+        href="https://dream.aliases.co"
+        target="_blank"
         className="flex items-center space-x-2"
         title={siteConfig.description}
       >
-        <Icons.logo className="h-auto w-[190px]" />
+        <Icons.logo className="h-auto w-[140px]" />
       </Link>
       {items?.length ? (
-        <nav className="flex gap-6 align-bottom">
+        <nav className="hidden gap-6 align-bottom  sm:flex">
           {items?.map(
             (item, index) =>
               item.href && (
@@ -29,7 +30,7 @@ export function MainNav({ items }: MainNavProps) {
                   key={index}
                   href={item.href}
                   className={cn(
-                    "flex items-center text-sm font-medium text-secondary-foreground",
+                    "flex text-sm font-medium text-secondary-foreground",
                     item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >

@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "DreamStack App",
+  name: "Dream App",
   description:
-    "Build whatever you can dream of with DreamStack from Aliases.co",
+    "dream.aliases.co - If you can type, you can build it.",
   mainNav: [
     {
       title: "from Aliases",
@@ -14,5 +14,6 @@ export const siteConfig = {
     aliases: "https://aliases.co",
     linkedin: "https://www.linkedin.com/company/aliases-inc/",
     twitter: "https://x.com/aliasesinc",
+    dream: "https://dream.aliases.co",
   },
 }

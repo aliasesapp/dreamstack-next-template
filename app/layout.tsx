@@ -1,12 +1,12 @@
 import "@/styles/globals.css"
 
 import { Metadata } from "next"
+import { Viewport } from "next/types"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const iconUrl =
@@ -30,6 +30,17 @@ export const metadata: Metadata = {
     shortcut: `${iconUrl}/favicon-16x16.png`,
     apple: `${iconUrl}/apple-touch-icon.png`,
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+    { media: "(prefers-color-scheme: dark)", color: "#050A1A" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  userScalable: false,
 }
 
 interface RootLayoutProps {
