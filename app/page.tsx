@@ -17,7 +17,7 @@ export default function IndexPage() {
       <div className="flex gap-4">
         <Button asChild variant="default">
           <Link href={siteConfig.links.dream} target="_blank" rel="noreferrer">
-            Visit dream.aliases.co
+            Visit askdream.ai
           </Link>
         </Button>
       </div>

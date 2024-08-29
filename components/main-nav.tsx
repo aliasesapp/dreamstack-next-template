@@ -14,7 +14,7 @@ export function MainNav({ items }: MainNavProps) {
   return (
     <div className="flex items-end gap-1 md:gap-2">
       <Link
-        href="https://dream.aliases.co"
+        href="https://askdream.ai"
         target="_blank"
         className="flex items-center space-x-2"
         title={siteConfig.description}

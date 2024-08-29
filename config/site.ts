@@ -14,6 +14,6 @@ export const siteConfig = {
     aliases: "https://aliases.co",
     linkedin: "https://www.linkedin.com/company/aliases-inc/",
     twitter: "https://x.com/aliasesinc",
-    dream: "https://dream.aliases.co",
+    dream: "https://askdream.ai",
   },
 }
