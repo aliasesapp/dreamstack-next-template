@@ -2,6 +2,7 @@ import "@/styles/globals.css"
 
 import { Metadata } from "next"
 import { Viewport } from "next/types"
+import { AuthProvider } from "@/contexts/auth-provider"
 import FullstoryProvider from "@/contexts/fullstory-provider"
 
 import { siteConfig } from "@/config/site"
@@ -57,10 +58,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <FullstoryProvider>
-              <div className="relative flex min-h-screen flex-col">
-                <SiteHeader />
-                <div className="flex-1">{children}</div>
-              </div>
+              <AuthProvider>
+                <div className="relative flex min-h-screen flex-col">
+                  <SiteHeader />
+                  <div className="flex-1">{children}</div>
+                </div>
+              </AuthProvider>
             </FullstoryProvider>
           </ThemeProvider>
         </body>
