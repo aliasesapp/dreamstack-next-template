@@ -1,4 +1,4 @@
-import "@/styles/globals.css"
+import "@/app/globals.css"
 
 import { Metadata } from "next"
 import { Viewport } from "next/types"
